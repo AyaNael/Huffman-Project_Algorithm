@@ -250,7 +250,7 @@ public class Main extends Application {
         Label originalSize = new Label("Original File Size: " + (compressor.getOriginalFileSize()*8) + " bits");
         Label compressedSize = new Label("Compressed File Size: " + compressor.getCompressedFileSize() + " bits");
         Label compressionRatio = new Label("Compression Ratio: "
-                + String.format("%.2f", 100.0 * (1 - (double) compressor.getBuffer().length / compressor.getOriginalFileSize())) + "%");
+                + String.format("%.2f", 100.0 * (1 - (double) compressor.getCompressedFileSize() / (compressor.getOriginalFileSize()*8))) + "%");
 
         for (Label label : new Label[]{numCharacters,frequencies, originalSize, compressedSize, compressionRatio}) {
             label.setStyle("-fx-font-size: 18px; -fx-text-fill: #FFFFFF;"); // Uniform styling for all labels
